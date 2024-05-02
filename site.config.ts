@@ -2,24 +2,24 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'd1e89e9e42eb4ebf9486ae0374039efc',
-
+  rootNotionPageId: 'b254e834ac954cff98bef345d514beb4',
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  name: '고영준의 Notion Bolg',
+  domain: 'kohyeongjune.dev.notion.com',
+  author: 'Koh yeong june',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description:
+    '고영준의 개발 블로그입니다. 호기심이 많고 "왜"를 질문하며 살아가는 개발자의 블로그에서 함께 역량을 길러나가요:D',
 
   // social usernames (optional)
-  twitter: 'transitive_bs',
-  github: 'transitive-bullshit',
-  linkedin: 'fisch2',
+  // twitter: 'transitive_bs',
+  github: 'yeongjunekoh',
+  linkedin: 'yeoungjunekoh',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
