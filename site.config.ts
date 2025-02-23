@@ -10,11 +10,11 @@ export default siteConfig({
   // basic site info (required)
   name: '고영준의 Notion Bolg',
   domain: 'kohyeongjune.dev.notion.com',
-  author: 'Koh yeong june',
+  author: 'koh yeong june',
 
   // open graph metadata (optional)
   description:
-    '고영준의 개발 블로그입니다. 호기심이 많고 "왜"를 질문하며 살아가는 개발자의 블로그에서 함께 역량을 길러나가요:D',
+    '고영준의 성장 블로그입니다. IT 업계에서 엔지니어와 PM으로 일하고 있으나, 모든 분야에 관심이 많습니다. 제가 배운 것을 기록하고, 공유하는 공간입니다.',
 
   // social usernames (optional)
   // twitter: 'transitive_bs',
