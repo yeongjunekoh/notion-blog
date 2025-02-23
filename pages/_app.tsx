@@ -14,6 +14,8 @@ import 'styles/notion.css'
 import 'styles/prism-theme.css'
 
 import type { AppProps } from 'next/app'
+import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 import * as Fathom from 'fathom-client'
 import { useRouter } from 'next/router'
 import posthog from 'posthog-js'
@@ -32,7 +34,16 @@ if (!isServer) {
   bootstrap()
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+// 커스텀 레이아웃을 위한 타입 확장
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactElement
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter()
 
   React.useEffect(() => {
@@ -61,5 +72,8 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  // getLayout이 있으면 사용하고, 없으면 기본 레이아웃 사용
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(<Component {...pageProps} />)
 }

@@ -11,6 +11,15 @@ export async function resolveNotionPage(domain: string, rawPageId?: string) {
   let pageId: string
   let recordMap: ExtendedRecordMap
 
+  if (rawPageId?.startsWith('dashboard')) {
+    return {
+      error: {
+        statusCode: 404,
+        message: 'Not found'
+      }
+    }
+  }
+
   if (rawPageId && rawPageId !== 'index') {
     pageId = parsePageId(rawPageId)
 
